@@ -1,12 +1,13 @@
 
 /**
- *
+ *Clase Historial permite la implementacion de la lista para almacenar el 
+ * historial de operaciones
  * @author Keneth
  */
 public class Historial {
     private String expresion;
     private double resultado;
-
+    //Constructor
     public Historial(String expresion, double resultado) {
         this.expresion = expresion;
         this.resultado = resultado;

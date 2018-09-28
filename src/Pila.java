@@ -1,5 +1,5 @@
 /**
- *
+ *Clase Pila almacena y devuelve los tokens 
  * @author Keneth
  */
 public class Pila {
@@ -8,11 +8,14 @@ public class Pila {
     int cima;
     
     public Pila(){
-                
+              //Constructor  
         arreglo = new double[10];
         cima = 0;
     }
-    
+    /**
+     * Metodo que recibe un token y lo inserta en la pila
+     * @param token 
+     */
     public void push(double token){
         
         if(cima < arreglo.length){
@@ -27,7 +30,7 @@ public class Pila {
     }
     }
     /**
-     *
+     *Metodo que devuelve el ultimo token ingresado
      * @return
      */
     public double pop(){

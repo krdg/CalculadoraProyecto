@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="CalculadoraRPN">
+  <ClassDiagramComponents>
+    <Class name="Calculadora" package="" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="hist" type="List&lt;Historial&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="mostrarMenu" returnType="void" visibility="public"/>
+        <Method name="menu" returnType="void" visibility="public">
+          <Argument type="String" name="opcion"/>
+        </Method>
+        <Method name="operar" returnType="void" visibility="public">
+          <Argument type="String" name="expresion"/>
+        </Method>
+        <Method name="esNum" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="token"/>
+        </Method>
+        <Method name="saveH" returnType="void" visibility="public">
+          <Argument type="String" name="expresion"/>
+          <Argument type="Double" name="resultado"/>
+        </Method>
+        <Method name="printH" returnType="void" visibility="public"/>
+        <Method name="writeToFile" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="Historial" package="" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="expresion" type="String" visibility="private"/>
+        <Field name="resultado" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="expresion"/>
+          <Argument type="double" name="resultado"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getExpresion" returnType="String" visibility="public"/>
+        <Method name="setExpresion" returnType="void" visibility="public">
+          <Argument type="String" name="expresion"/>
+        </Method>
+        <Method name="getResultado" returnType="double" visibility="public"/>
+        <Method name="setResultado" returnType="void" visibility="public">
+          <Argument type="double" name="resultado"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="MenuInterface" package="" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Methods>
+        <Method name="mostrarMenu" returnType="void" visibility="public"/>
+        <Method name="menu" returnType="void" visibility="public">
+          <Argument type="String" name="opcion"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="Pila" package="" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="arreglo" type="double" visibility="package"/>
+        <Field name="cima" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="push" returnType="void" visibility="public">
+          <Argument type="double" name="token"/>
+        </Method>
+        <Method name="pop" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="hist" source="Calculadora" target="Historial" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Historial&gt;"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Calculadora" target="MenuInterface"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
